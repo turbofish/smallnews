@@ -18,5 +18,11 @@ typedef struct feed_s {
     entry_t* entries;
 } feed_t;
 
+feed_t* feed_new(char* title);
+
+int feed_add_entry(feed_t* f, entry_t* e);
+
+int feed_print(feed_t* f);
+
 #endif /* FEED_H_DEFINED */
 

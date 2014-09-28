@@ -12,14 +12,17 @@
 #include "entry.h"
 #include "log.h"
 
-entry_t* entry_new(void) {
+entry_t* entry_new(char* title) {
     /* {{{ */
     entry_t* e;
 
     e = (entry_t*) malloc(sizeof(entry_t));
     if (e == NULL) {
         log_crash("Cannot allocate entry");
+        return NULL;
     }
+
+    e->title = title;
 
     return e;
     /* }}} */

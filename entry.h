@@ -13,7 +13,13 @@ typedef struct entry_s {
     char* author;
     char* updated;
     char* guid;
+
+    struct entry_s* next;
 } entry_t;
+
+entry_t* entry_new(char* title);
+
+void entry_delete(entry_t* e);
 
 #endif /* ENTRY_H_DEFINED */
 
